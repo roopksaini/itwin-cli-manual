@@ -4,5 +4,5 @@ Authenticate itwin-cli with [Bentley](http://ims.bentley.com).
 
 ## Available Commands
 
-- [itwin-cli auth login](docs/imodel/imodel-create.md)
-- [itwin-cli auth logout](docs/imodel/imodel-update.md)
+- [itwin-cli auth login](docs/auth/auth-login.md)
+- [itwin-cli auth logout](docs/auth/auth-logout.md)
