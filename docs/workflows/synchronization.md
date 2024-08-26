@@ -40,10 +40,6 @@ Synchronization is the process of reading data from design files and writing int
 2. In step 5 . . . when creating a storage connection, the *connectorType* must be specified. If the *connectorType* is not specified by the user (assuming we make it an optional entry), it can be obtained from dictionary below.
 
 ```TypeScript
-// Assuming 'data' is the parsed response JSON.
-const rootFolderHref = data._links.folder.href;
-console.log(rootFolderHref);
-
 export const fileExtensionToConnectorType: { [key: string]: string[] } = {
   csv: ['SHELLEDWCSV'],
   dgn: ['CIVIL', 'MSTN', 'OBD', 'PROSTRUCTURES'],
