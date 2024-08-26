@@ -13,7 +13,7 @@ Synchronize design files into an iModel.
   **Type:** `string`  **Required:** Yes
 
 - **`--connectorTypes`**  
-  A list of connectors to prioritize for synchronization. Separate multiple connectors with a space.
+  A list of connectors to prioritize for synchronization. Separate multiple connectors with a space.  
   **Type:** `string` **Required:** No  
   **Valid Values:** `"SHELLEDWCSV"`, `"CIVIL"`, `"MSTN"`, `"OBD"`, `"PROSTRUCTURES"`, `"AUTOPLANT"`, `"AVEVAPID"`, `"CIVIL3D"`, `"DWG"`, `"IFC"`, `"GEOSPATIAL"`, `"OPENTOWER"`, `"REVIT"`, `"SPPID"`, `"SPXREVIEW"`, `"AVEVADIAGRAMS"`, `"NWD"`, `"INTELLIPID"`, `"PSEXCEL"`
 
