@@ -11,6 +11,7 @@
   * [list](docs/itwin/itwin-list.md)
 * [imodel](docs/imodel/imodel.md)
   * [create](docs/imodel/imodel-create.md)
+  * [populate](docs/imodel/imodel-populate.md)
   * [update](docs/imodel/imodel-update.md)
   * [delete](docs/imodel/imodel-delete.md)
   * [info](docs/imodel/imodel-info.md)
