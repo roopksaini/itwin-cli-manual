@@ -5,6 +5,7 @@ Work with iModels of an iTwin.
 ## Available Commands
 
 - [itwin-cli imodel create](docs/imodel/imodel-create.md)
+- [itwin-cli imodel populate](docs/imodel/imodel-populate.md)
 - [itwin-cli imodel update](docs/imodel/imodel-update.md)
 - [itwin-cli imodel delete](docs/imodel/imodel-delete.md)
 - [itwin-cli imodel info](ddocs/imodel/imodel-info.md)
