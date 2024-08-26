@@ -8,6 +8,6 @@ Work seamlessly with iTwins.
 - [itwin-cli itwin](/docs/itwin/itwin)
 - [itwin-cli imodel](/docs/imodel/imodel)
 
-## Initial workflows
+## Workflows
 
 - [Synchronization](docs/workflows/synchronization)
