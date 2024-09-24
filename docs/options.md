@@ -1,4 +1,4 @@
-# Global Options
+# global options
 
 These options are available across all commands in the CLI:
 
