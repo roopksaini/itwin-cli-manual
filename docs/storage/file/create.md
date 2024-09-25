@@ -1,25 +1,29 @@
 # itp storage file create
 
-Create a new file in an iTwin's storage.
+Create a new file in a specified folder in iTwin's storage.
 
 ## Options
 
-- **`--iTwinId`**  
-  The ID of the iTwin where the file will be created.  
+- **`--folderId`**  
+  The ID of the folder where the file will be created.  
   **Type:** `string` **Required:** Yes
 
-- **`--fileName`**  
-  The name of the file to be created.  
+- **`--displayName`**  
+  The display name of the file.  
   **Type:** `string` **Required:** Yes
+
+- **`--description`**  
+  A description for the file.  
+  **Type:** `string` **Required:** No
 
 ## Examples
 
 ```bash
-# Example 1: Create a file in iTwin's storage
-itp storage file create --iTwinId "ad0ba809-9241-48ad-9eb0-c8038c1a1d51" --fileName "design.dwg"
+# Example 1: Creating a file with display name only
+itp storage file create --folderId "abc12345-6789-4321-abcd-9876543210ef" --displayName "design.dwg"
 
-# Example 2: Create another file in the same iTwin
-itp storage file create --iTwinId "ad0ba809-9241-48ad-9eb0-c8038c1a1d51" --fileName "model.ifc"
+# Example 2: Creating a file with display name and description
+itp storage file create --folderId "abc12345-6789-4321-abcd-9876543210ef" --displayName "model.ifc" --description "Model file for the building design"
 ```
 
 ## API Reference

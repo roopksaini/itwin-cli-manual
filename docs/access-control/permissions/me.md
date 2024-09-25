@@ -16,4 +16,4 @@ itp access-control permissions me
 
 ## API Reference
 
-[Get All Permissions](https://developer.bentley.com/apis/access-control-v2/operations/get-all-permissions/)
+[Get My iTwin Permissions](https://developer.bentley.com/apis/access-control-v2/operations/get-iTwin-permissions/)
