@@ -1,12 +1,8 @@
 # itp imodel connection delete
 
-Delete a storage connection from an iModel.
+Delete a storage connection of an iModel.
 
 ## Options
-
-- **`--iModelId`**  
-  The ID of the iModel.  
-  **Type:** `string` **Required:** Yes
 
 - **`--connectionId`**  
   The ID of the storage connection to delete.  
@@ -15,7 +11,7 @@ Delete a storage connection from an iModel.
 ## Examples
 
 ```bash
-itp imodel connection delete --iModelId "ad0ba809-9241-48ad-9eb0-c8038c1a1d51" --connectionId "bf4d8b36-25d7-4b72-b38b-12c1f0325f42"
+itp imodel connection delete --connectionId "bf4d8b36-25d7-4b72-b38b-12c1f0325f42"
 ```
 
 ## API Reference

@@ -1,22 +1,32 @@
 # itp imodel connection run list
 
-List all runs for a specific storage connection of an iModel.
+List all runs for a specific storage connection.
 
 ## Options
-
-- **`--iModelId`**  
-  The ID of the iModel whose connection runs you want to list.  
-  **Type:** `string` **Required:** Yes
 
 - **`--connectionId`**  
   The ID of the storage connection.  
   **Type:** `string` **Required:** Yes
 
+- **`--top`**  
+  Limit the number of runs returned.  
+  **Type:** `integer` **Required:** No
+
+- **`--skip`**  
+  Skip a number of runs in the result.  
+  **Type:** `integer` **Required:** No
+
 ## Examples
 
 ```bash
 # Example 1: List all runs for a specific connection
-itp imodel connection run list --iModelId "ad0ba809-9241-48ad-9eb0-c8038c1a1d51" --connectionId "bf4d8b36-25d7-4b72-b38b-12c1f0325f42"
+itp imodel connection run list --connectionId "bf4d8b36-25d7-4b72-b38b-12c1f0325f42"
+
+# Example 2: Limit the results to 10 runs
+itp imodel connection run list --connectionId "bf4d8b36-25d7-4b72-b38b-12c1f0325f42" --top 10
+
+# Example 3: Skip the first 5 runs and return the next set
+itp imodel connection run list --connectionId "bf4d8b36-25d7-4b72-b38b-12c1f0325f42" --skip 5
 ```
 
 ## API Reference

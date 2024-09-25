@@ -1,6 +1,6 @@
 # itp imodel connection list
 
-List all storage connections for a specific iModel.
+List all storage connections of a specific iModel.
 
 ## Options
 

@@ -6,19 +6,21 @@ Create a new iTwin with specified properties.
 
 - **`--class`**  
   The Class of your iTwin.  
-  **Type:** `string` **Required:** Yes
+  **Type:** `string` **Required:** Yes  
+  **Valid Values:** `"Account"`, `"Thing"`, `"Endeavor"`
 
 - **`--subClass`**  
   The subClass of your iTwin.  
-  **Type:** `string` **Required:** Yes
-
-- **`--type`**  
-  Defines the iTwin's Type.  
-  **Type:** `string` **Required:** No
+  **Type:** `string` **Required:** Yes  
+  **Valid Values:** `"Account"`, `"Portfolio"`, `"Asset"`, `"Program"`, `"Project"`, `"WorkPackage"`
 
 - **`--displayName`**  
   The iTwin's display name.  
   **Type:** `string` **Required:** Yes
+
+- **`--type`**  
+  Open ended property to define your iTwin's type.  
+  **Type:** `string` **Required:** No
 
 - **`--number`**  
   Unique identifier for the iTwin. Defaults to iTwin Id if unspecified.  
@@ -26,11 +28,11 @@ Create a new iTwin with specified properties.
 
 - **`--geographicLocation`**  
   Optional location, typically an address or city.  
-  **Type:** `string, null` **Required:** No
+  **Type:** `string` **Required:** No
 
 - **`--ianaTimeZone`**  
   Optional IANA time zone ID.  
-  **Type:** `string, null` **Required:** No
+  **Type:** `string` **Required:** No
 
 - **`--dataCenterLocation`**  
   Data center for iTwin data. Defaults to East US.  
@@ -50,13 +52,13 @@ Create a new iTwin with specified properties.
 
 ```bash
 # Example 1: Creating a basic iTwin with minimal required fields
-itp itwin create --class "Infrastructure" --subClass "Bridge" --displayName "Golden Gate Revamp"
+itp itwin create --class "Thing" --subClass "Project" --displayName "Golden Gate Revamp"
 
 # Example 2: Creating an iTwin with geographic location and timezone
-itp itwin create --class "Transportation" --subClass "Railway" --displayName "High-Speed Rail Project" --geographicLocation "San Francisco, CA" --ianaTimeZone "America/Los_Angeles"
+itp itwin create --class "Endeavor" --subClass "Asset" --displayName "High-Speed Rail Project" --geographicLocation "San Francisco, CA" --ianaTimeZone "America/Los_Angeles"
 
 # Example 3: Specifying a data center location
-itp itwin create --class "Utilities" --subClass "Power Plant" --displayName "Solar Farm Expansion" --dataCenterLocation "UK South"
+itp itwin create --class "Account" --subClass "Portfolio" --displayName "Solar Farm Expansion" --dataCenterLocation "UK South"
 ```
 
 ## API Reference

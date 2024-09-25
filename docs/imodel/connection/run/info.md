@@ -1,11 +1,11 @@
 # itp imodel connection run info
 
-Retrieve details about a specific run of a storage connection of an iModel.
+Retrieve details about a specific run of a storage connection.
 
 ## Options
 
-- **`--iModelId`**  
-  The ID of the iModel associated with the connection run.  
+- **`--connectionId`**  
+  The ID of the storage connection associated with the run.  
   **Type:** `string` **Required:** Yes
 
 - **`--connectionRunId`**  
@@ -15,7 +15,7 @@ Retrieve details about a specific run of a storage connection of an iModel.
 ## Examples
 
 ```bash
-itp imodel connection run info --iModelId "ad0ba809-9241-48ad-9eb0-c8038c1a1d51" --connectionRunId "abc12345-6789-4321-abcd-9876543210ef"
+itp imodel connection run info --connectionId "abc12345-6789-4321-abcd-9876543210ef" --connectionRunId "run98765-4321-abcd-1234-567890abcdef"
 ```
 
 ## API Reference
