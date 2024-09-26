@@ -7,19 +7,22 @@ Create a new iTwin with specified properties.
 - **`--class`**  
   The Class of your iTwin.  
   **Type:** `string` **Required:** Yes  
-  **Valid Values:** `"Account"`, `"Thing"`, `"Endeavor"`
+  **Valid Values:** `"Thing"`, `"Endeavor"`, `"Account"`
 
 - **`--subClass`**  
-  The subClass of your iTwin.  
+  The subClass of your iTwin. Must match the selected class.  
   **Type:** `string` **Required:** Yes  
-  **Valid Values:** `"Account"`, `"Portfolio"`, `"Asset"`, `"Program"`, `"Project"`, `"WorkPackage"`
+  **Valid Combinations:**  
+  - For **`Thing`**: `"Asset"`, `"Portfolio"`  
+  - For **`Endeavor`**: `"Project"`, `"Program"`, `"WorkPackage"`  
+  - For **`Account`**: `"Account"`
 
 - **`--displayName`**  
   The iTwin's display name.  
   **Type:** `string` **Required:** Yes
 
 - **`--type`**  
-  Open ended property to define your iTwin's type.  
+  Open ended property to define your iTwin's type.
   **Type:** `string` **Required:** No
 
 - **`--number`**  
@@ -51,14 +54,14 @@ Create a new iTwin with specified properties.
 ## Examples
 
 ```bash
-# Example 1: Creating a basic iTwin with minimal required fields
-itp itwin create --class "Thing" --subClass "Project" --displayName "Golden Gate Revamp"
+# Example 1: Creating an iTwin with the 'Thing' class and 'Asset' subclass
+itp itwin create --class "Thing" --subClass "Asset" --displayName "Golden Gate Revamp"
 
-# Example 2: Creating an iTwin with geographic location and timezone
-itp itwin create --class "Endeavor" --subClass "Asset" --displayName "High-Speed Rail Project" --geographicLocation "San Francisco, CA" --ianaTimeZone "America/Los_Angeles"
+# Example 2: Creating an iTwin with the 'Endeavor' class and 'Project' subclass
+itp itwin create --class "Endeavor" --subClass "Project" --displayName "Bridge Construction" --geographicLocation "San Francisco, CA" --ianaTimeZone "America/Los_Angeles"
 
-# Example 3: Specifying a data center location
-itp itwin create --class "Account" --subClass "Portfolio" --displayName "Solar Farm Expansion" --dataCenterLocation "UK South"
+# Example 3: Creating an iTwin with data center location and status set to 'Trial'
+itp itwin create --class "Endeavor" --subClass "Program" --displayName "Rail Network" --dataCenterLocation "UK South" --status "Trial"
 ```
 
 ## API Reference

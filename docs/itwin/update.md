@@ -11,19 +11,22 @@ Update the specified iTwin. Only include properties you want to update.
 - **`--class`**  
   The Class of your iTwin.  
   **Type:** `string` **Required:** No  
-  **Valid Values:** `"Account"`, `"Thing"`, `"Endeavor"`
+  **Valid Values:** `"Thing"`, `"Endeavor"`, `"Account"`
 
 - **`--subClass`**  
-  The subClass of your iTwin.  
+  The subClass of your iTwin. Must match the selected class.  
   **Type:** `string` **Required:** No  
-  **Valid Values:** `"Account"`, `"Portfolio"`, `"Asset"`, `"Program"`, `"Project"`, `"WorkPackage"`
-
-- **`--type`**  
-  Open ended property to define your iTwin's type.
-  **Type:** `string` **Required:** No
+  **Valid Combinations:**  
+  - For **`Thing`**: `"Asset"`, `"Portfolio"`  
+  - For **`Endeavor`**: `"Project"`, `"Program"`, `"WorkPackage"`  
+  - For **`Account`**: `"Account"`
 
 - **`--displayName`**  
   The iTwin's display name.  
+  **Type:** `string **Required:** No
+
+- **`--type`**  
+  Open ended property to define your iTwin's type.
   **Type:** `string` **Required:** No
 
 - **`--number`**  
@@ -47,12 +50,12 @@ Update the specified iTwin. Only include properties you want to update.
 
 ```bash
 # Example 1: Updating iTwin's class and display name
-itp itwin update --id "b1a2c3d4-5678-90ab-cdef-1234567890ab" --class "Endeavor" --subClass "Project" --displayName "Updated Solar Farm"
+itp itwin update --id "b1a2c3d4-5678-90ab-cdef-1234567890ab" --class "Thing" --subClass "Portfolio" --displayName "Updated Portfolio"
 
 # Example 2: Changing geographic location and time zone
-itp itwin update --id "b1a2c3d4-5678-90ab-cdef-1234567890ab" --geographicLocation "New City, CA" --ianaTimeZone "America/Chicago"
+itp itwin update --id "b1a2c3d4-5678-90ab-cdef-1234567890ab" --geographicLocation "New York, NY" --ianaTimeZone "America/New_York"
 
-# Example 3: Setting the status to inactive
+# Example 3: Setting the iTwin's status to 'Inactive'
 itp itwin update --id "b1a2c3d4-5678-90ab-cdef-1234567890ab" --status "Inactive"
 ```
 
