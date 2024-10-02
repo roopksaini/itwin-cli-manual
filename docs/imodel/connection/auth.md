@@ -20,4 +20,4 @@ itp imodel connection auth --redirectUrl "https://example.com/callback"
 
 ## API Reference
 
-[Get Authorization Information](https://dev-developer.bentley.com/apis/synchronization/operations/get-authorization-information/)
+[Get Authorization Information](https://developer.bentley.com/apis/synchronization/operations/get-authorization-information/)
