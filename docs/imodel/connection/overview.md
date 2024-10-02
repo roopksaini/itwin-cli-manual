@@ -9,5 +9,6 @@ Work with iModel connections.
 - [itp imodel connection delete](/docs/imodel/connection/delete.md)
 - [itp imodel connection info](/docs/imodel/connection/info.md)
 - [itp imodel connection list](/docs/imodel/connection/list.md)
+- [itp imodel connection authenticate](/docs/imodel/connection/authenticate.md)
 - [itp imodel connection run](/docs/imodel/connection/run/overview.md)
 - [itp imodel connection sourcefile](/docs/imodel/connection/sourcefile/overview.md)
