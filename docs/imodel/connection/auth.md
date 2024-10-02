@@ -1,4 +1,4 @@
-# itp imodel connection authenticate
+# itp imodel connection auth
 
 Generate a refresh token to maintain connection validity for long-running tasks.
 
@@ -12,10 +12,10 @@ Generate a refresh token to maintain connection validity for long-running tasks.
 
 ```bash
 # Example 1: Authenticate user and get authorization information for an iModel connection
-itp imodel connection authenticate
+itp imodel connection auth
 
 # Example 2: Authenticate with a specific redirect URL after authorization
-itp imodel connection authenticate --redirectUrl "https://example.com/callback"
+itp imodel connection auth --redirectUrl "https://example.com/callback"
 ```
 
 ## API Reference
