@@ -6,6 +6,7 @@ Work with iModels of an iTwin.
 
 - [itp imodel create](docs/imodel/create.md)
 - [itp imodel populate](docs/imodel/populate.md)
+- [itp imodel visualize](docs/imodel/visualize.md)
 - [itp imodel update](docs/imodel/update.md)
 - [itp imodel delete](docs/imodel/delete.md)
 - [itp imodel info](docs/imodel/info.md)

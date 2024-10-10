@@ -14,6 +14,7 @@
 * [imodel](docs/imodel/overview.md)
   * [create](docs/imodel/create.md)
   * [populate](docs/imodel/populate.md)
+  * [visualize](docs/imodel/visualize.md)
   * [update](docs/imodel/update.md)
   * [delete](docs/imodel/delete.md)
   * [info](docs/imodel/info.md)
