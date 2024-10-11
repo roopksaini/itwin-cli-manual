@@ -48,3 +48,4 @@
     * [user](docs/access-control/member/user/overview.md)
 * [workflows](docs/workflows/overview.md)
   * [synchronization](docs/workflows/synchronization.md)
+* [user stories](docs/user-stories/overview.md)
