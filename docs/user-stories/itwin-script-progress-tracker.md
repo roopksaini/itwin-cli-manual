@@ -46,6 +46,8 @@ As a user, I want to monitor key aspects of my iTwin project at a glance. This i
 
 ## Script
 
+#### Linux/MacOS Solution
+
 ```bash
 #!/bin/bash
 
@@ -105,6 +107,59 @@ itp access-control member group list --iTwinId $ITWIN_ID
 # List all owners in the iTwin
 echo "Listing Owners:"
 itp access-control member owner list --iTwinId $ITWIN_ID
+```
+
+#### Windows Solution
+
+```batch
+@echo off
+
+:: iTwin and iModel IDs
+set ITWIN_ID=your-itwin-id
+
+:: List all repositories in the iTwin
+echo Listing Repositories:
+itp itwin repository list --iTwinId %ITWIN_ID%
+
+:: List all iModels in the iTwin
+echo Listing iModels:
+for /f "delims=" %%A in ('itp imodel list --iTwinId %ITWIN_ID% ^| findstr /r /c:"\"id\""') do (
+  set IMODEL_ID=%%A
+  echo Tracking progress for iModel ID: %IMODEL_ID%
+  
+  :: List all connections in the iModel
+  echo Listing Connections:
+  itp imodel connection list --iModelId %IMODEL_ID%
+
+  :: Loop through connections and list files
+  for /f "delims=" %%B in ('itp imodel connection list --iModelId %IMODEL_ID% ^| findstr /r /c:"\"id\""') do (
+    set CONNECTION_ID=%%B
+    echo Files for Connection ID: %CONNECTION_ID%
+    
+    :: List files in this connection
+    itp imodel connection sourcefile list --iModelId %IMODEL_ID% --connectionId %CONNECTION_ID%
+  )
+  
+  :: List changesets in the iModel
+  echo Listing Changesets:
+  itp imodel changeset list --iModelId %IMODEL_ID%
+
+  :: List named versions in the iModel
+  echo Listing Named Versions:
+  itp imodel named-version list --iModelId %IMODEL_ID%
+)
+
+:: List all users in the iTwin
+echo Listing Users:
+itp access-control member user list --iTwinId %ITWIN_ID%
+
+:: List all groups in the iTwin
+echo Listing Groups:
+itp access-control member group list --iTwinId %ITWIN_ID%
+
+:: List all owners in the iTwin
+echo Listing Owners:
+itp access-control member owner list --iTwinId %ITWIN_ID%
 ```
 
 ## Expected Outcome
