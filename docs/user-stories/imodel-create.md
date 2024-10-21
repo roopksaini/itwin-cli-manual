@@ -50,7 +50,7 @@ _Note: Use a visualization tool (external) to check the design data. After reali
 
 **Step 4: Refine the iModel by expanding the extents**
 ```bash
-itp imodel update --iModelId "your-imodel-id" --extent '{
+itp imodel update --id "your-imodel-id" --extent '{
   "southWest": {
     "latitude": 34.052235,
     "longitude": -118.243683
