@@ -33,7 +33,7 @@ As a user, I want to create a group of users, assign roles and permissions, and 
 
 Step 1: Create a group
 ```bash
-itp access-control group create --iTwinId "your-itwin-id" --displayName "Project Team"
+itp access-control group create --iTwinId "your-itwin-id" --name "Project Team"
 ```
 
 Step 2: Add members to the group

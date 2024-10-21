@@ -49,3 +49,4 @@
 * [workflows](docs/workflows/overview.md)
   * [synchronization](docs/workflows/synchronization.md)
 * [user stories](docs/user-stories/overview.md)
+  * [test outcomes](docs/user-stories/test-outcomes.md)
