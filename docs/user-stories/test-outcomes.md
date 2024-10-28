@@ -18,11 +18,11 @@
   - **Result**: `Unknown command: India`
   - **Issue**: Processing spaces in options.
 
-- **Command** (successful):
+- **Command**:
   ```bash
   ./itp.sh itwin create --class 'Thing' --subClass 'Asset' --displayName '123'
   ```
-  - **Result**:
+  - **Result** (successful):
   ```json
   {
     "id": "94e0332b-d84c-4b40-8858-737ffe9497cb",
@@ -40,11 +40,11 @@
 
 #### [Create and refine an iModel](docs/user-stories/imodel-create.md)
 
-- **Command** (successful):
+- **Command**:
   ```bash
   ./itp.sh imodel create --iTwinId "94e0332b-d84c-4b40-8858-737ffe9497cb" --name "123"
   ```
-  - **Result**:
+  - **Result** (successful):
   ```json
   {
     "id": "6d98ed1f-ce51-4592-870d-55fabc225d39",
@@ -55,12 +55,12 @@
   }
   ```
 
-- **Command** (successful):
+- **Command**:
   ```bash
-./itp.sh imodel create --iTwinId "94e0332b-d84c-4b40-8858-737ffe9497cb" --name "123" --extent '{"southWest":{"latitude":34,"longitude":-118},"northEast":{"latitude":34,"longitude":-118}}
+  ./itp.sh imodel create --iTwinId "94e0332b-d84c-4b40-8858-737ffe9497cb" --name "123" --extent '{"southWest":{"latitude":34,"longitude":-118},"northEast":{"latitude":34,"longitude":-118}}
  ```
 
-  - **Result**:
+  - **Result** (successful):
   ```json
   {
     "id": "6d98ed1f-ce51-4592-870d-55fabc225d39",
@@ -99,12 +99,12 @@
   }
   ```
 
-- **Command** (successful):
+- **Command**:
   ```bash
 ./itp.sh imodel update --id "6d98ed1f-ce51-4592-870d-55fabc225d39" --extent '{"southWest":{"latitude":34.052235,"longitude":-118.243683},"northEast":{"latitude":34.252235,"longitude":-118.443683}}'
  ```
 
-  - **Result**:
+  - **Result** (successful):
   ```json
   {
     "id": "6d98ed1f-ce51-4592-870d-55fabc225d39",
@@ -215,11 +215,11 @@
 
   - **Issue**: Subclass might be required, despite API documentation saying it's optional.
 
-- **Command** (successful):
+- **Command**:
   ```bash
   ./itp.sh itwin repository create --iTwinId "94e0332b-d84c-4b40-8858-737ffe9497cb" --class "GeographicInformationSystem" --subClass "WebMapService" --uri "https://example.com/gis-repo"
   ```
-  - **Result**:
+  - **Result** (successful):
   ```json
   {
     "repository": {
@@ -245,11 +245,11 @@
 
 #### [Upload project PDFs to iTwin storage](docs/user-stories/itwin-upload-files-storage.md)
 
-- **Command** (successful):
+- **Command**:
   ```bash
   ./itp.sh storage root-folder --iTwinId "94e0332b-d84c-4b40-8858-737ffe9497cb"
   ```
-  - **Result**:
+  - **Result** (successful):
   ```json
   {
     "items": [
@@ -295,11 +295,11 @@
   }
   ```
 
-  - **Command** (successful):
+  - **Command**:
   ```bash
   ./itp.sh storage folder create --parentFolderId "KzPglEzYQEuIWHN__pSXyysz4JRM2EBLiFhzf_6Ul8s" --displayName "FloorPlans"
   ```
-  - **Result**:
+  - **Result** (successful):
   ```json
   {
     "type": "folder",
@@ -327,11 +327,11 @@
 
 
 
-  - **Command** (successful):
+  - **Command**:
   ```bash
   ./itp.sh storage file create --folderId "KzPglEzYQEuIWHN__pSXy7l7buGqtw5Hlcr9tDl5JcA" --displayName "floorplan.pdf"
   ```
-  - **Result**:
+  - **Result** (successful):
   ```json
   {
     "_links": {
@@ -346,20 +346,20 @@
   ```
 
 
-  - **Command** (successful):
+  - **Command**:
   ```bash
   ./itp.sh storage file upload --uploadUrl "https://projectshareprodeussa01.blob.core.windows.net/azuresqldbecpluginstorage/ProjectShare/File/92468d2b-ab50-44e0-8d1a-20692fbd7814?sv=2019-07-07&sr=b&sig=ck9KEdo0jecQfl%2BW5iT0%2Bs5KR8YLhkjhzAHJ1LSX%2BLo%3D&se=2024-10-28T11%3A46%3A27Z&sp=rw&rscd=attachment%3B%20filename%3D%22floorplan.pdf%22" --filePath "floorplan.pdf"
 ```
-  - **Result**:
+  - **Result** (successful):
   ```json
   {}
   ```
 
-  - **Command** (successful):
+  - **Command**:
   ```bash
   ./itp.sh storage file update-complete --fileId "KzPglEzYQEuIWHN__pSXyyuNRpJQq-BEjRogaS-9eBQ"
   ```
-  - **Result**:
+  - **Result** (successful):
   ```json
   {
     "file": {
@@ -389,11 +389,11 @@
   }
   ```
 
-  - **Command** (successful):
+  - **Command**:
   ```bash
   ./itp.sh storage file list --folderId "KzPglEzYQEuIWHN__pSXy7l7buGqtw5Hlcr9tDl5JcA"
   ```
-  - **Result**:
+  - **Result** (successful):
   ```json
   [
     {
