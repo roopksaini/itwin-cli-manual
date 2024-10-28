@@ -2,15 +2,17 @@
 
 ## Scenario
 
-As a user, I want to upload project-related PDFs, like floor plans, to iTwin storage by accessing the root folder, setting up a dedicated "floor plans" folder, uploading the PDF, and then confirming that it’s successfully stored by checking the folder contents.
+As a user, I want to upload project-related PDFs, like floor plans, to iTwin storage by accessing the root folder, setting up a dedicated "floor plans" folder, uploading the PDF in multiple steps, and then confirming that it’s successfully stored by checking the folder contents.
 
 ## Steps
 
 1. **Create an iTwin**: Start by creating a new iTwin for managing the project.
 2. **Get the root folder**: Retrieve the root folder of the iTwin storage where you will create the new folder.
 3. **Create a folder called “floor plans”**: Add a new folder specifically for storing floor plan PDFs.
-4. **Upload the floorplan.pdf**: Upload the PDF file into the "floor plans" folder.
-5. **Confirm the upload**: View the folder contents to ensure the PDF was uploaded successfully.
+4. **Create the file record**: Set up a record for the new file in the "floor plans" folder in iTwin storage.
+5. **Upload the floorplan.pdf**: Upload the actual PDF data into the file record.
+6. **Complete the upload**: Confirm that the upload process has completed successfully.
+7. **Confirm the upload**: View the folder contents to ensure the PDF was uploaded successfully.
 
 ## Commands Used
 
@@ -24,7 +26,13 @@ As a user, I want to upload project-related PDFs, like floor plans, to iTwin sto
   Creates a new folder in the iTwin’s storage.
 
 - `itp storage file create`  
-  Uploads a file (e.g., PDF) to the specified folder.
+  Creates a file record in the specified folder.
+
+- `itp storage file upload`  
+  Uploads file data to the specified upload URL.
+
+- `itp storage file update-complete`  
+  Marks the file upload as complete in iTwin storage.
 
 - `itp storage file list`  
   Lists the contents of a folder to confirm that the upload was successful.
@@ -43,22 +51,32 @@ itp storage root-folder --iTwinId "your-itwin-id"
 
 **Step 3: Create a folder called "floor plans"**
 ```bash
-itp storage folder create --iTwinId "your-itwin-id" --parentId "root-folder-id" --displayName "Floor Plans"
+itp storage folder create --parentFolderId "root-folder-id" --displayName "Floor Plans"
 ```
 
-**Step 4: Upload the floorplan.pdf**
+**Step 4: Create the file record**
 ```bash
-itp storage file create --iTwinId "your-itwin-id" --folderId "your-folder-id" --filePath "/path/to/floorplan.pdf"
+itp storage file create --folderId "your-folder-id" --displayName "floorplan.pdf"
 ```
 
-**Step 5: Confirm the upload by viewing the folder contents**
+**Step 5: Upload the floorplan.pdf**
 ```bash
-itp storage file list --iTwinId "your-itwin-id" --folderId "your-folder-id"
+itp storage file upload --uploadUrl "https://example.com/upload-url" --filePath "/path/to/floorplan.pdf"
+```
+
+**Step 6: Complete the upload**
+```bash
+itp storage file update-complete --fileId "your-file-id"
+```
+
+**Step 7: Confirm the upload by viewing the folder contents**
+```bash
+itp storage file list --folderId "your-folder-id"
 ```
 
 ## Expected Outcome
 
-By following these steps, you will have created an iTwin, organized a "floor plans" folder in the iTwin’s storage, uploaded the floorplan PDF, and confirmed the upload by viewing the folder's contents.
+By following these steps, you will have created an iTwin, organized a "floor plans" folder in the iTwin’s storage, created a file record for the PDF, uploaded the PDF in multiple steps, and confirmed the upload by viewing the folder's contents.
 
 ## Next Steps
 

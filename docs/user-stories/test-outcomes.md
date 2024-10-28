@@ -40,19 +40,6 @@
 
 #### [Create and refine an iModel](docs/user-stories/imodel-create.md)
 
-- **Command**:
-  ```bash
-  ./itp.sh imodel populate --id '6d98ed1f-ce51-4592-870d-55fabc225d39' --files './data/design/original/Architectural.dgn' --connectorTypes 'MSTN'
-  ```
-  - **Result**: `Error: HTTP error! status: 422. Response data: {"code":"InvalidStorageRequest","message":"Request payload contains errors.","details":[{"code":"InvalidValue","message":"Item contains invalid characters"}]}`
-  - **Issue**: Parsing file paths.
-
-- **Command**:
-  ```bash
-  ./itp.sh imodel populate --id '6d98ed1f-ce51-4592-870d-55fabc225d39' --files 'Architectural.dgn' --connectorTypes 'MSTN'
-  ```
-  - **Result**: `itp imodel connection auth | Authenticate connector for user | ReferenceError: open is not defined.`
-
 - **Command** (successful):
   ```bash
   ./itp.sh imodel create --iTwinId "94e0332b-d84c-4b40-8858-737ffe9497cb" --name "123"
@@ -68,11 +55,110 @@
   }
   ```
 
+- **Command** (successful):
+  ```bash
+./itp.sh imodel create --iTwinId "94e0332b-d84c-4b40-8858-737ffe9497cb" --name "123" --extent '{"southWest":{"latitude":34,"longitude":-118},"northEast":{"latitude":34,"longitude":-118}}
+ ```
+
+  - **Result**:
+  ```json
+  {
+    "id": "6d98ed1f-ce51-4592-870d-55fabc225d39",
+    "displayName": "123",
+    "dataCenterLocation": "East US",
+    "name": "123",
+    "description": null,
+    "state": "initialized",
+    "createdDateTime": "2024-10-17T13:44:55.5370000Z",
+    "iTwinId": "94e0332b-d84c-4b40-8858-737ffe9497cb",
+    "isSecured": false,
+    "extent": {
+      "southWest": {
+        "latitude": 34,
+        "longitude": -118
+      },
+      "northEast": {
+        "latitude": 34,
+        "longitude": -118
+      }
+    },
+    "containersEnabled": 0,
+    "_links": {
+      "creator": {
+        "href": "https://api.bentley.com/imodels/6d98ed1f-ce51-4592-870d-55fabc225d39/users/6ba725bc-aca9-4315-8d02-909297e9e819"
+      },
+      "changesets": {
+        "href": "https://api.bentley.com/imodels/6d98ed1f-ce51-4592-870d-55fabc225d39/changesets"
+      },
+      "namedVersions": {
+        "href": "https://api.bentley.com/imodels/6d98ed1f-ce51-4592-870d-55fabc225d39/namedversions"
+      },
+      "upload": null,
+      "complete": null
+    }
+  }
+  ```
+
+- **Command** (successful):
+  ```bash
+./itp.sh imodel update --id "6d98ed1f-ce51-4592-870d-55fabc225d39" --extent '{"southWest":{"latitude":34.052235,"longitude":-118.243683},"northEast":{"latitude":34.252235,"longitude":-118.443683}}'
+ ```
+
+  - **Result**:
+  ```json
+  {
+    "id": "6d98ed1f-ce51-4592-870d-55fabc225d39",
+    "displayName": "123",
+    "dataCenterLocation": "East US",
+    "name": "123",
+    "description": null,
+    "state": "initialized",
+    "createdDateTime": "2024-10-17T13:44:55.5370000Z",
+    "iTwinId": "94e0332b-d84c-4b40-8858-737ffe9497cb",
+    "isSecured": false,
+    "extent": {
+      "southWest": {
+        "latitude": 34.052235,
+        "longitude": -118.243683
+      },
+      "northEast": {
+        "latitude": 34.252235,
+        "longitude": -118.443683
+      }
+    },
+    "containersEnabled": 0,
+    "_links": {
+      "creator": {
+        "href": "https://api.bentley.com/imodels/6d98ed1f-ce51-4592-870d-55fabc225d39/users/6ba725bc-aca9-4315-8d02-909297e9e819"
+      },
+      "changesets": {
+        "href": "https://api.bentley.com/imodels/6d98ed1f-ce51-4592-870d-55fabc225d39/changesets"
+      },
+      "namedVersions": {
+        "href": "https://api.bentley.com/imodels/6d98ed1f-ce51-4592-870d-55fabc225d39/namedversions"
+      }
+    }
+  }
+  ```
+
 ---
 
 ### **Working with Design Data**
 
 #### [Populate an iModel with design data](docs/user-stories/imodel-populate-data.md)
+
+- **Command**:
+  ```bash
+  ./itp.sh imodel populate --id '6d98ed1f-ce51-4592-870d-55fabc225d39' --files './data/design/original/Architectural.dgn' --connectorTypes 'MSTN'
+  ```
+  - **Result**: `Error: HTTP error! status: 422. Response data: {"code":"InvalidStorageRequest","message":"Request payload contains errors.","details":[{"code":"InvalidValue","message":"Item contains invalid characters"}]}`
+  - **Issue**: Parsing file paths.
+
+- **Command**:
+  ```bash
+  ./itp.sh imodel populate --id '6d98ed1f-ce51-4592-870d-55fabc225d39' --files 'Architectural.dgn' --connectorTypes 'MSTN'
+  ```
+  - **Result**: `itp imodel connection auth | Authenticate connector for user | ReferenceError: open is not defined.`
 
 - **Command**:
   ```bash
@@ -158,6 +244,184 @@
 ### **Storage and Versioning**
 
 #### [Upload project PDFs to iTwin storage](docs/user-stories/itwin-upload-files-storage.md)
+
+- **Command** (successful):
+  ```bash
+  ./itp.sh storage root-folder --iTwinId "94e0332b-d84c-4b40-8858-737ffe9497cb"
+  ```
+  - **Result**:
+  ```json
+  {
+    "items": [
+      {
+        "size": 5710336,
+        "isFileLocked": false,
+        "type": "file",
+        "id": "KzPglEzYQEuIWHN__pSXy70KXHckjO1LrITSu2LZ__k",
+        "displayName": "Architectural.dgn",
+        "description": null,
+        "path": "Architectural.dgn",
+        "lastModifiedByDisplayName": "Roop Saini",
+        "createdDateTime": "2024-10-18T07:57:42.5914518Z",
+        "lastModifiedDateTime": "2024-10-18T07:57:42.5914549Z",
+        "parentFolderId": "KzPglEzYQEuIWHN__pSXyysz4JRM2EBLiFhzf_6Ul8s",
+        "_links": {
+          "createdBy": {
+            "href": "https://api.bentley.com/accesscontrol/itwins/94e0332b-d84c-4b40-8858-737ffe9497cb/members/6ba725bc-aca9-4315-8d02-909297e9e819"
+          },
+          "lastModifiedBy": {
+            "href": "https://api.bentley.com/accesscontrol/itwins/94e0332b-d84c-4b40-8858-737ffe9497cb/members/6ba725bc-aca9-4315-8d02-909297e9e819"
+          },
+          "parentFolder": {
+            "href": "https://api.bentley.com/storage/folders/KzPglEzYQEuIWHN__pSXyysz4JRM2EBLiFhzf_6Ul8s"
+          }
+        }
+      }
+    ],
+    "_links": {
+      "self": {
+        "href": "https://api.bentley.com/storage?iTwinId=94e0332b-d84c-4b40-8858-737ffe9497cb&$top=100&$skip=0"
+      },
+      "prev": {
+        "href": "https://api.bentley.com/storage?iTwinId=94e0332b-d84c-4b40-8858-737ffe9497cb&$top=100&$skip=0"
+      },
+      "next": {
+        "href": "https://api.bentley.com/storage?iTwinId=94e0332b-d84c-4b40-8858-737ffe9497cb&$top=100&$skip=100"
+      },
+      "folder": {
+        "href": "https://api.bentley.com/storage/folders/KzPglEzYQEuIWHN__pSXyysz4JRM2EBLiFhzf_6Ul8s"
+      }
+    }
+  }
+  ```
+
+  - **Command** (successful):
+  ```bash
+  ./itp.sh storage folder create --parentFolderId "KzPglEzYQEuIWHN__pSXyysz4JRM2EBLiFhzf_6Ul8s" --displayName "FloorPlans"
+  ```
+  - **Result**:
+  ```json
+  {
+    "type": "folder",
+    "id": "KzPglEzYQEuIWHN__pSXy7l7buGqtw5Hlcr9tDl5JcA",
+    "displayName": "FloorPlans",
+    "description": null,
+    "path": "FloorPlans",
+    "lastModifiedByDisplayName": "Roop Saini",
+    "createdDateTime": "2024-10-28T09:52:04.0688377Z",
+    "lastModifiedDateTime": "2024-10-28T09:52:04.0688403Z",
+    "parentFolderId": "KzPglEzYQEuIWHN__pSXyysz4JRM2EBLiFhzf_6Ul8s",
+    "_links": {
+      "createdBy": {
+        "href": "https://api.bentley.com/accesscontrol/itwins/94e0332b-d84c-4b40-8858-737ffe9497cb/members/6ba725bc-aca9-4315-8d02-909297e9e819"
+      },
+      "lastModifiedBy": {
+        "href": "https://api.bentley.com/accesscontrol/itwins/94e0332b-d84c-4b40-8858-737ffe9497cb/members/6ba725bc-aca9-4315-8d02-909297e9e819"
+      },
+      "parentFolder": {
+        "href": "https://api.bentley.com/storage/folders/KzPglEzYQEuIWHN__pSXyysz4JRM2EBLiFhzf_6Ul8s"
+      }
+    }
+  }
+  ```
+
+
+
+  - **Command** (successful):
+  ```bash
+  ./itp.sh storage file create --folderId "KzPglEzYQEuIWHN__pSXy7l7buGqtw5Hlcr9tDl5JcA" --displayName "floorplan.pdf"
+  ```
+  - **Result**:
+  ```json
+  {
+    "_links": {
+      "completeUrl": {
+        "href": "https://api.bentley.com/storage/files/KzPglEzYQEuIWHN__pSXyyuNRpJQq-BEjRogaS-9eBQ/complete"
+      },
+      "uploadUrl": {
+        "href": "https://projectshareprodeussa01.blob.core.windows.net/azuresqldbecpluginstorage/ProjectShare/File/92468d2b-ab50-44e0-8d1a-20692fbd7814?sv=2019-07-07&sr=b&sig=ck9KEdo0jecQfl%2BW5iT0%2Bs5KR8YLhkjhzAHJ1LSX%2BLo%3D&se=2024-10-28T11%3A46%3A27Z&sp=rw&rscd=attachment%3B%20filename%3D%22floorplan.pdf%22"
+      }
+    }
+  }
+  ```
+
+
+  - **Command** (successful):
+  ```bash
+  ./itp.sh storage file upload --uploadUrl "https://projectshareprodeussa01.blob.core.windows.net/azuresqldbecpluginstorage/ProjectShare/File/92468d2b-ab50-44e0-8d1a-20692fbd7814?sv=2019-07-07&sr=b&sig=ck9KEdo0jecQfl%2BW5iT0%2Bs5KR8YLhkjhzAHJ1LSX%2BLo%3D&se=2024-10-28T11%3A46%3A27Z&sp=rw&rscd=attachment%3B%20filename%3D%22floorplan.pdf%22" --filePath "floorplan.pdf"
+```
+  - **Result**:
+  ```json
+  {}
+  ```
+
+  - **Command** (successful):
+  ```bash
+  ./itp.sh storage file update-complete --fileId "KzPglEzYQEuIWHN__pSXyyuNRpJQq-BEjRogaS-9eBQ"
+  ```
+  - **Result**:
+  ```json
+  {
+    "file": {
+      "size": 1634286,
+      "isFileLocked": false,
+      "type": "file",
+      "id": "KzPglEzYQEuIWHN__pSXyyuNRpJQq-BEjRogaS-9eBQ",
+      "displayName": "floorplan.pdf",
+      "description": null,
+      "path": "FloorPlans/floorplan.pdf",
+      "lastModifiedByDisplayName": "Roop Saini",
+      "createdDateTime": "2024-10-28T10:46:27.4390048Z",
+      "lastModifiedDateTime": "2024-10-28T10:46:27.4390069Z",
+      "parentFolderId": "KzPglEzYQEuIWHN__pSXy7l7buGqtw5Hlcr9tDl5JcA",
+      "_links": {
+        "createdBy": {
+          "href": "https://api.bentley.com/accesscontrol/itwins/94e0332b-d84c-4b40-8858-737ffe9497cb/members/6ba725bc-aca9-4315-8d02-909297e9e819"
+        },
+        "lastModifiedBy": {
+          "href": "https://api.bentley.com/accesscontrol/itwins/94e0332b-d84c-4b40-8858-737ffe9497cb/members/6ba725bc-aca9-4315-8d02-909297e9e819"
+        },
+        "parentFolder": {
+          "href": "https://api.bentley.com/storage/folders/KzPglEzYQEuIWHN__pSXy7l7buGqtw5Hlcr9tDl5JcA"
+        }
+      }
+    }
+  }
+  ```
+
+  - **Command** (successful):
+  ```bash
+  ./itp.sh storage file list --folderId "KzPglEzYQEuIWHN__pSXy7l7buGqtw5Hlcr9tDl5JcA"
+  ```
+  - **Result**:
+  ```json
+  [
+    {
+      "size": 1634286,
+      "isFileLocked": false,
+      "type": "file",
+      "id": "KzPglEzYQEuIWHN__pSXyyuNRpJQq-BEjRogaS-9eBQ",
+      "displayName": "floorplan.pdf",
+      "description": null,
+      "path": "FloorPlans/floorplan.pdf",
+      "lastModifiedByDisplayName": "Roop Saini",
+      "createdDateTime": "2024-10-28T10:46:27.4390048Z",
+      "lastModifiedDateTime": "2024-10-28T10:46:27.4390069Z",
+      "parentFolderId": "KzPglEzYQEuIWHN__pSXy7l7buGqtw5Hlcr9tDl5JcA",
+      "_links": {
+        "createdBy": {
+          "href": "https://api.bentley.com/accesscontrol/itwins/94e0332b-d84c-4b40-8858-737ffe9497cb/members/6ba725bc-aca9-4315-8d02-909297e9e819"
+        },
+        "lastModifiedBy": {
+          "href": "https://api.bentley.com/accesscontrol/itwins/94e0332b-d84c-4b40-8858-737ffe9497cb/members/6ba725bc-aca9-4315-8d02-909297e9e819"
+        },
+        "parentFolder": {
+          "href": "https://api.bentley.com/storage/folders/KzPglEzYQEuIWHN__pSXy7l7buGqtw5Hlcr9tDl5JcA"
+        }
+      }
+    }
+  ]
+  ```
 
 #### [Create an iModel named version](docs/user-stories/imodel-create-named-version.md)
 
