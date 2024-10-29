@@ -27,7 +27,7 @@ As a user, I want to automatically update an iModel with the latest design files
 
 **Step 1: Create an iTwin**
 ```bash
-itp itwin create --displayName "New Project" --description "Auto-updated design files"
+itp itwin create --class "Thing" --subClass "Asset" --displayName "New Infrastructure Project" --description "iTwin of new infrastructure project"
 ```
 
 **Step 2: Create an iModel**

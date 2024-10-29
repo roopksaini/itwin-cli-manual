@@ -2,7 +2,7 @@
 
 ## Scenario
 
-As a user, I want to monitor key aspects of my iTwin project at a glance. This includes tracking repositories, iModels, connections, synchronized files, user roles, changesets, and named versions in an iModel.
+As a user, I want to monitor key aspects of my iTwin at a glance. This includes tracking repositories, iModels, connections, synchronized files, user roles, changesets, and named versions in an iModel.
 
 ## Steps
 
@@ -53,6 +53,7 @@ As a user, I want to monitor key aspects of my iTwin project at a glance. This i
 
 # iTwin and iModel IDs
 ITWIN_ID="your-itwin-id"
+IMODEL_ID="your-imodel-id"
 
 # List all repositories in the iTwin
 echo "Listing Repositories:"
@@ -116,6 +117,7 @@ itp access-control member owner list --iTwinId $ITWIN_ID
 
 :: iTwin and iModel IDs
 set ITWIN_ID=your-itwin-id
+set IMODEL_ID="your-imodel-id"
 
 :: List all repositories in the iTwin
 echo Listing Repositories:

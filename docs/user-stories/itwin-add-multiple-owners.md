@@ -2,7 +2,7 @@
 
 ## Scenario
 
-As a user, I want to add multiple owners to an iTwin so that different team members can have full access to manage the project.
+As a user, I want to add multiple owners to an iTwin so that different team members can have full iTwin access.
 
 ## Steps
 
@@ -23,7 +23,7 @@ As a user, I want to add multiple owners to an iTwin so that different team memb
 
 Step 1: Create an iTwin
 ```bash
-itp itwin create --displayName "New Infrastructure Project" --description "iTwin for managing infrastructure project"
+itp itwin create --class "Thing" --subClass "Asset" --displayName "New Infrastructure Project" --description "iTwin of new infrastructure project"
 ```
 
 Step 2: Add owner 1 to the iTwin

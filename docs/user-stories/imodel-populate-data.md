@@ -2,13 +2,13 @@
 
 ## Scenario
 
-As a user, I want to populate an iModel with design data to manage and synchronize project files.
+As a user, I want to populate an iModel with design data.
 
 ## Steps
 
 1. **Create an iTwin**: Start by creating a new iTwin.
 2. **Create an iModel**: Create an iModel within the iTwin.
-3. **Populate the iModel**: Synchronize design files into the iModel to start managing the project.
+3. **Populate the iModel**: Synchronize design files into the iModel to start visualizing data.
 
 ## Commands Used
 
@@ -25,7 +25,7 @@ As a user, I want to populate an iModel with design data to manage and synchroni
 
 Step 1: Create an iTwin
 ```bash
-itp itwin create --displayName "New Construction Project" --description "Managing construction designs"
+itp itwin create --class "Thing" --subClass "Asset" --displayName "New Infrastructure Project" --description "iTwin of new infrastructure project"
 ```
 
 Step 2: Create an iModel

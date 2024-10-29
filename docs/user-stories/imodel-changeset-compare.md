@@ -14,8 +14,8 @@ As a user, I want to compare two versions of an iModel to understand the changes
 
 - `itp changed-elements enable`  
   Enable change tracking for an iModel.
-- `itp imodel changeset list`  
-  Lists all changesets for the iModel, providing a version history.
+- `itp changed-elements changesets`  
+  Lists all changesets for the iModel, along with their processing statuses.
 - `itp changed-elements comparison`  
   Compares two changesets and returns a list of changes between them.
 
@@ -24,17 +24,17 @@ As a user, I want to compare two versions of an iModel to understand the changes
 Step 1: Enable change tracking for the iModel
 
 ```bash
-itp changed-elements enable --iModelId "your-imodel-id"
+itp changed-elements enable --iTwinId "your-itwin-id" --iModelId "your-imodel-id"
 ```
 
 Step 2: List available changesets to find versions for comparison
 ```bash
-itp imodel changeset list --iModelId "your-imodel-id"
+itp changed-elements changesets --iTwinId "your-itwin-id" --iModelId "your-imodel-id"
 ```
 
 Step 3: Compare two changesets (abc123 and def456)
 ```bash
-itp changed-elements comparison --iModelId "your-imodel-id" --from "abc123" --to "def456"
+itp changed-elements comparison --iTwinId "your-itwin-id" --iModelId "your-imodel-id" --changesetId1 "abc123" --changesetId2 "def456"
 ```
 
 ## Expected Outcome

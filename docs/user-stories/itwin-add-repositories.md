@@ -27,7 +27,7 @@ As a user, I want to create multiple types of repositories (GIS, Subsurface, Con
 
 Step 1: Create an iTwin
 ```bash
-itp itwin create --displayName "Infrastructure Project" --description "iTwin for managing multiple repositories"
+itp itwin create --class "Thing" --subClass "Asset" --displayName "New Infrastructure Project" --description "iTwin of new infrastructure project"
 ```
 
 Step 2: Create a GIS repository

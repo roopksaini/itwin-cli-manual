@@ -2,7 +2,7 @@
 
 ## Scenario
 
-As a user, I want to quickly create an iTwin and start working on my project, even if I don’t have all the details immediately. Over time, as I gather more information about the project’s class, subclass, location, and time zone, I can refine the iTwin by updating its properties, ensuring it better reflects the project's scope and needs.
+As a user, I want to quickly create an iTwin, even if I don’t have all the details immediately. Over time, as I gather more information about the iTwin's class, subclass, location, and time zone, I can refine the iTwin by updating its properties.
 
 ## Steps
 

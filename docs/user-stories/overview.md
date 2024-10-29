@@ -20,5 +20,5 @@
 - [Track iTwin project progress](docs/user-stories/itwin-script-progress-tracker.md)
 
 **Storage and Versioning**
-- [Upload project PDFs to iTwin storage](docs/user-stories/itwin-upload-files-storage.md)
+- [Upload PDFs to iTwin storage](docs/user-stories/itwin-upload-files-storage.md)
 - [Create an iModel named version](docs/user-stories/imodel-create-named-version.md)

@@ -2,14 +2,14 @@
 
 ## Scenario
 
-As a user, I want to create an iModel for a new project, set its geographic extents, and later expand those extents as the project scope evolves. This allows me to adjust the iModel boundaries without needing to recreate it.
+As a user, I want to create an iModel inside a new iTwin, set its geographic extents, and later expand those extents as the model scope evolves. This allows me to adjust the iModel boundaries without needing to recreate it.
 
 *Note: Setting the extents is optional when creating an iModel. In this user story, we demonstrate how to adjust extents after the initial creation.*
 
 ## Steps
 
 1. **Create an iModel with initial extents**: Start by creating the iModel with basic details, including an initial geographic extent.
-2. **Refine the iModel by expanding the extents**: As the project scope becomes clearer, update the iModel’s extents to fully capture the project area.
+2. **Refine the iModel by expanding the extents**: As the model scope becomes clearer, update the iModel’s extents to fully capture the project area.
 
 ## Commands Used
 
@@ -22,7 +22,7 @@ As a user, I want to create an iModel for a new project, set its geographic exte
 ## Example
 
 **Step 1: Create an iModel with initial extents**
-~~~bash
+```bash
 itp imodel create --iTwinId "your-itwin-id" --name "New Infrastructure Project" --extent '{
   "southWest": {
     "latitude": 34.052235,
@@ -33,10 +33,10 @@ itp imodel create --iTwinId "your-itwin-id" --name "New Infrastructure Project" 
     "longitude": -118.343683
   }
 }'
-~~~
+```
 
 **Step 2: Refine the iModel by expanding the extents**
-~~~bash
+```bash
 itp imodel update --id "your-imodel-id" --extent '{
   "southWest": {
     "latitude": 34.052235,
@@ -47,7 +47,7 @@ itp imodel update --id "your-imodel-id" --extent '{
     "longitude": -118.443683
   }
 }'
-~~~
+```
 
 ## Expected Outcome
 

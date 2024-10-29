@@ -1,12 +1,12 @@
-# Uploading project PDFs to iTwin storage
+# Uploading PDFs to iTwin storage
 
 ## Scenario
 
-As a user, I want to upload project-related PDFs, like floor plans, to iTwin storage by accessing the root folder, setting up a dedicated "floor plans" folder, uploading the PDF in multiple steps, and then confirming that it’s successfully stored by checking the folder contents.
+As a user, I want to upload construction-related PDFs, like floor plans, to iTwin storage by accessing the root folder, setting up a dedicated "floor plans" folder, uploading the PDF in multiple steps, and then confirming that it’s successfully stored by checking the folder contents.
 
 ## Steps
 
-1. **Create an iTwin**: Start by creating a new iTwin for managing the project.
+1. **Create an iTwin**: Start by creating a new iTwin.
 2. **Get the root folder**: Retrieve the root folder of the iTwin storage where you will create the new folder.
 3. **Create a folder called “floor plans”**: Add a new folder specifically for storing floor plan PDFs.
 4. **Create the file record**: Set up a record for the new file in the "floor plans" folder in iTwin storage.
@@ -41,7 +41,7 @@ As a user, I want to upload project-related PDFs, like floor plans, to iTwin sto
 
 **Step 1: Create an iTwin**
 ```bash
-itp itwin create --displayName "New Project" --description "iTwin for uploading floor plans"
+itp itwin create --class "Thing" --subClass "Asset" --displayName "New Infrastructure Project" --description "iTwin of new infrastructure project"
 ```
 
 **Step 2: Get the root folder**

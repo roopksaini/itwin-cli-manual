@@ -2,7 +2,7 @@
 
 ## Scenario
 
-As a user, I want to create a group of users, assign roles and permissions, and provide them access to an iTwin to manage and collaborate on the project effectively.
+As a user, I want to create a group of users, assign roles and permissions, and provide them access to an iTwin for effective collaboration.
 
 ## Steps
 
@@ -38,7 +38,7 @@ itp access-control group create --iTwinId "your-itwin-id" --name "Project Team"
 
 Step 2: Add members to the group
 ```bash
-itp access-control group update --iTwinId "your-itwin-id" --groupId "your-group-id" --addMembers "user1@example.com,user2@example.com"
+itp access-control group update --iTwinId "your-itwin-id" --groupId "your-group-id" --members '["user1@example.com", "user2@example.com"]'
 ```
 
 Step 3: Create a role
@@ -48,7 +48,7 @@ itp access-control role create --iTwinId "your-itwin-id" --displayName "Project 
 
 Step 4: Add permissions to the role
 ```bash
-itp access-control role update --iTwinId "your-itwin-id" --roleId "your-role-id" --addPermissions "ViewModel,EditModel"
+itp access-control role update --iTwinId "your-itwin-id" --roleId "your-role-id" --permissions '["Permission1", "Permission2", "Permission3"]'
 ```
 
 Step 5: Add the group and role to the iTwin as members

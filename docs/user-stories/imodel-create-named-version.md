@@ -32,7 +32,7 @@ As a user, I want to create a named version of an iModel at a specific changeset
 
 **Step 1: Create an iTwin**
 ```bash
-itp itwin create --displayName "New Project" --description "Project with named versions"
+itp itwin create --class "Thing" --subClass "Asset" --displayName "New Infrastructure Project" --description "iTwin of new infrastructure project"
 ```
 
 **Step 2: Create an iModel**
@@ -57,7 +57,7 @@ itp imodel changeset list --iModelId "your-imodel-id"
 
 **Step 6: Create a named version from a specific changeset**
 ```bash
-itp imodel named-version create --iModelId "your-imodel-id" --changesetId "your-changeset-id" --displayName "Version 1: Initial Design"
+itp imodel named-version create --iModelId "your-imodel-id" --changesetId "your-changeset-id" --name "Version 1: Initial Design"
 ```
 
 ## Expected Outcome
