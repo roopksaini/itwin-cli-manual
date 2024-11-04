@@ -15,4 +15,4 @@ Work seamlessly with the iTwin Platform.
 
 ## Workflows
 
-- [Synchronization](docs/workflows/synchronization)
+- [Synchronization](workflows/synchronization)
