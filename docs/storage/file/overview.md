@@ -4,11 +4,11 @@ Interact with files inside a storage repository.
 
 ## Available Commands
 
-- [itp storage file create](docs/storage/file/create.md)
-- [itp storage file update](docs/storage/file/update.md)
-- [itp storage file delete](docs/storage/file/delete.md)
-- [itp storage file info](docs/storage/file/info.md)
-- [itp storage file list](docs/storage/file/list.md)
-- [itp storage file upload](docs/storage/file/upload.md)
-- [itp storage file update-content](docs/storage/file/update-content.md)
-- [itp storage file update-complete](docs/storage/file/update-complete.md)
+- [itp storage file create](storage/file/create.md)
+- [itp storage file update](storage/file/update.md)
+- [itp storage file delete](storage/file/delete.md)
+- [itp storage file info](storage/file/info.md)
+- [itp storage file list](storage/file/list.md)
+- [itp storage file upload](storage/file/upload.md)
+- [itp storage file update-content](storage/file/update-content.md)
+- [itp storage file update-complete](storage/file/update-complete.md)

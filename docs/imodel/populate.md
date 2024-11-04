@@ -35,4 +35,4 @@ itp imodel populate --id "i9j0k1l2-3456-78ab-cdef-9012345678ij" --files "model.r
 
 ## Workflow Reference
 
-- [Synchronization](/docs/workflows/synchronization)
+- [Synchronization](/workflows/synchronization)
